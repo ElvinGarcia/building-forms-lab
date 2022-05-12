@@ -1,6 +1,5 @@
 // Add BandInput component
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
 
 
 class BandInput extends Component {
@@ -25,7 +24,7 @@ class BandInput extends Component {
     return(
       <div>
         <form onSubmit={this.handleOnSubmit}>
-          <input type='text' value={this.state.name} placeholder="Enter A BandName" onChange={this.handleChange}/>
+          <input type='text' placeholder="Enter A BandName" autoFocus value={this.state.name}  onChange={this.handleChange}/>
           <br/>
           <input type="submit" value="submit" />
           </form>
@@ -33,8 +32,5 @@ class BandInput extends Component {
     )
   }
 }
-const mapDispatchToProps = (dispath) => {
-  return {addBand: band=> dispath({type:"ADD_BAND", payload: band})}
-}
 
-export default connect(null, mapDispatchToProps)(BandInput)
+export default BandInput;
